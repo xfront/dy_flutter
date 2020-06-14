@@ -22,7 +22,7 @@ class CounterBloc extends Bloc<CounterEvent, int> {
         yield 1;
         break;
       case CounterEvent.increment:
-        yield currentState + 1;
+        yield state + 1;
         break;
     }
   }
@@ -57,11 +57,11 @@ class IndexBloc extends Bloc<IndexEvent, Map> {
   @override
   Stream<Map> mapEventToState(IndexEvent event) async* {
     if (event is UpdateTab) {
-      yield { ...currentState, 'nav': event.tab };
+      yield { ...state, 'nav': event.tab };
     } else if (event is UpdateLiveData) {
-      yield { ...currentState, 'liveData': event.liveData };
+      yield { ...state, 'liveData': event.liveData };
     } else if (event is UpdateSwiper) {
-      yield { ...currentState, 'swiper': event.swiper };
+      yield { ...state, 'swiper': event.swiper };
     }
   }
 }

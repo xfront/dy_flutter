@@ -162,7 +162,7 @@ class _Lottery extends State<Lottery> with DYBase {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: DYBase.dessignWidth)..init(context);
+    ScreenUtil.init(context, width: DYBase.dessignWidth);
     return Container(
       child: lotteryConfig == null ? null : Card(
         elevation: 5,

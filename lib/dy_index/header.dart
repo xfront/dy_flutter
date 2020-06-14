@@ -26,9 +26,10 @@ class _DyHeader extends State<DyHeader> with DYBase {
 
   Future _scan() async {
     try {
-       _search.text = await BarcodeScanner.scan();
+      ScanResult sr = await BarcodeScanner.scan();
+      _search.text = sr.rawContent;
     } on PlatformException catch (e) {
-      if (e.code == BarcodeScanner.CameraAccessDenied) {
+      if (e.code == BarcodeScanner.cameraAccessDenied) {
         DYdialog.alert(context, text: '设备未获得权限');
       } else {
         DYdialog.alert(context, text: '未捕获的错误: $e');

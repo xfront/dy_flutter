@@ -94,7 +94,7 @@ class _DyLoginPage extends State<DyLoginPage> with DYBase {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: DYBase.dessignWidth)..init(context);
+    ScreenUtil.init(context, width: DYBase.dessignWidth);
 
     String title;
     switch(type) {

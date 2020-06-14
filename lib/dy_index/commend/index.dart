@@ -44,10 +44,10 @@ class _CommendPage extends State<CommendPage> with DYBase, AutomaticKeepAliveCli
     final counterBloc = BlocProvider.of<CounterBloc>(context);
     final indexBloc = BlocProvider.of<IndexBloc>(context);
 
-    counterBloc.dispatch(CounterEvent.reset);
+    counterBloc.add(CounterEvent.reset);
 
     var liveList = await DYservice.getLiveData(context, 1);
-    indexBloc.dispatch(UpdateLiveData(liveList));
+    indexBloc.add(UpdateLiveData(liveList));
     // setState(() => null);
 
     _refreshController.refreshCompleted();
@@ -57,10 +57,10 @@ class _CommendPage extends State<CommendPage> with DYBase, AutomaticKeepAliveCli
   void _onLoading() async {
     final indexBloc = BlocProvider.of<IndexBloc>(context);
 
-    List liveData = BlocObj.index.currentState['liveData'];
+    List liveData = BlocObj.index.state['liveData'];
     var liveList = await DYservice.getLiveData(context);
     liveData.addAll(liveList);
-    indexBloc.dispatch(UpdateLiveData(liveData));
+    indexBloc.add(UpdateLiveData(liveData));
     // setState(() => null);
 
     _refreshController.loadComplete();
@@ -69,7 +69,7 @@ class _CommendPage extends State<CommendPage> with DYBase, AutomaticKeepAliveCli
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    ScreenUtil.instance = ScreenUtil(width: DYBase.dessignWidth)..init(context);
+    ScreenUtil.init(context, width: DYBase.dessignWidth);
 
     return BlocBuilder<IndexBloc, Map>(
       builder: (context, indexState) {

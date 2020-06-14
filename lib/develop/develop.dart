@@ -89,7 +89,7 @@ class _DevelopTest extends State<DevelopTest> with DYBase {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: DYBase.dessignWidth)..init(context);
+    ScreenUtil.init(context, width: DYBase.dessignWidth);
     return Padding(
         padding: EdgeInsets.all(dp(10)),
           child: Column(

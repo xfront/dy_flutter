@@ -59,7 +59,7 @@ class _CountdownInit extends State<CountdownInit> with DYBase, SingleTickerProvi
   
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: DYBase.dessignWidth)..init(context);
+    ScreenUtil.init(context,width: DYBase.dessignWidth);
     var countNum = _time - (_animation.value * 5 / 360).round();
 
     return GestureDetector(

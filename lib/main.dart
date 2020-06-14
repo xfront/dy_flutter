@@ -58,10 +58,10 @@ class DyApp extends StatelessWidget {
     return MultiBlocProvider(     // 多个Bloc注册
       providers: [
         BlocProvider<CounterBloc>(
-          builder: (context) => BlocObj.counter,
+          create: (context) => BlocObj.counter,
         ),
         BlocProvider<IndexBloc>(
-          builder: (context) => BlocObj.index,
+          create: (context) => BlocObj.index,
         ),
       ],
       child: MaterialApp(

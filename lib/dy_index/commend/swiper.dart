@@ -14,7 +14,7 @@ class SWwiperWidgets extends StatelessWidget with DYBase {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: DYBase.dessignWidth);
+    ScreenUtil.init(context, width: DYBase.designWidth);
 
     return BlocBuilder<IndexBloc, Map>(
       builder: (context, indexState) {

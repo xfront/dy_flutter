@@ -46,7 +46,7 @@ class _DyRoomPageState extends State<DyRoomPage> with DYBase {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: DYBase.dessignWidth);
+    ScreenUtil.init(context, width: DYBase.designWidth);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,

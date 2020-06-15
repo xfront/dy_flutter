@@ -35,7 +35,7 @@ class _BroadcastSwiper extends State<BroadcastSwiper> with DYBase {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: DYBase.dessignWidth);
+    ScreenUtil.init(context, width: DYBase.designWidth);
 
     return Container(
       padding: EdgeInsets.only(left: dp(10), right: dp(10)),

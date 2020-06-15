@@ -45,7 +45,7 @@ class _PlayerWidgets extends State<PlayerWidgets> with DYBase {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: DYBase.dessignWidth);
+    ScreenUtil.init(context, width: DYBase.designWidth);
     double screenWidth = MediaQuery.of(context).size.width;
     double playerHeight = screenWidth * 540 / 960;
 

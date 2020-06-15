@@ -80,7 +80,7 @@ class _SplashPageState extends State<SplashPage> with DYBase {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context,width: DYBase.dessignWidth);
+    ScreenUtil.init(context,width: DYBase.designWidth);
     return Scaffold(
       body: SizedBox(
         width: MediaQuery.of(context).size.width,

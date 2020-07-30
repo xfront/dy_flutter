@@ -12,8 +12,7 @@ abstract class BlocObj {
 enum CounterEvent { increment, reset }
 
 class CounterBloc extends Bloc<CounterEvent, int> {
-  @override
-  int get initialState => 1;
+  CounterBloc() : super(1);
 
   @override
   Stream<int> mapEventToState(CounterEvent event) async* {
@@ -47,12 +46,11 @@ class UpdateSwiper implements IndexEvent {
 }
 
 class IndexBloc extends Bloc<IndexEvent, Map> {
-  @override
-  Map get initialState => {
+  IndexBloc() : super({
     'nav': [],
     'liveData': [],
     'swiper': []
-  };
+  });
 
   @override
   Stream<Map> mapEventToState(IndexEvent event) async* {
